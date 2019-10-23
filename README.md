@@ -1,1 +1,1 @@
-# linkedlist-emz1003
+# list-emz1003
