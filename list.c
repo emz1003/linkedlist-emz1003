@@ -24,12 +24,14 @@ struct node *insert_front(struct node * n, int i) {
 }
 
 struct node *free_list(struct node * n) {
-    printf("freeing %d\n", n->i);
-    if (!n->next) {
-        free(n);
-        return NULL;
+    struct node * m;
+    while(n) {
+        printf("freeing %d\n", m->i);
+        m = n;
+        n = n->next;
+        free(m);
     }
-    return free_list(n->next);
+    return n;
 }
 
 struct node *remove_node(struct node *front, int data) {
