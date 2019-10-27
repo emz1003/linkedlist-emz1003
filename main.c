@@ -10,9 +10,9 @@ int main() {
     int n;
     for (n = 0; n < 10; n++) {
         printf("adding %d to list\n", n);
-        struct node *another = calloc(1, sizeof(struct node));
         temp->i = n;
         if(n != 9){
+            struct node *another = calloc(1, sizeof(struct node));
             temp->next = another;
             temp = temp->next;
         }
@@ -24,8 +24,8 @@ int main() {
     list = insert_front(list, 100);
     print_list(list);
 
-    printf("freelist(list):");
     list = free_list(list);
+    printf("freelist(list):");
     print_list(list);
 
     void *rm = calloc(1, sizeof(struct node));
@@ -35,10 +35,10 @@ int main() {
     for (n = 0; n < 10; n++)
     {
         printf("adding %d to anotherList\n", n);
-        struct node *another = calloc(1, sizeof(struct node));
         tempPointer->i = n;
         if (n != 9)
         {
+            struct node *another = calloc(1, sizeof(struct node));
             tempPointer->next = another;
             tempPointer = tempPointer->next;
         }
@@ -47,6 +47,8 @@ int main() {
     printf("remove_node(anotherList, 4): ");
     anotherList = remove_node(anotherList, 4);
     print_list(anotherList);
+    
+    free_list(anotherList);
 
     if(!p){
         free(p);

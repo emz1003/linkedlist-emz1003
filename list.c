@@ -26,7 +26,7 @@ struct node *insert_front(struct node * n, int i) {
 struct node *free_list(struct node * n) {
     struct node * m;
     while(n) {
-        printf("freeing %d\n", m->i);
+        printf("freeing %d\n", n->i);
         m = n;
         n = n->next;
         free(m);
