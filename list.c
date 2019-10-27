@@ -17,7 +17,7 @@ void print_list(struct node * n) {
 }
 
 struct node *insert_front(struct node * n, int i) {
-    struct node * new;
+    struct node * new = calloc(1, sizeof(struct node));
     new->i = i;
     new->next = n;
     return new;
